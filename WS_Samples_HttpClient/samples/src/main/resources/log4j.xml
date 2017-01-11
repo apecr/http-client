@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="_dd-MM-yyyy" />
+		<param name="Threshold" value="DEBUG" />
+		<param name="file"
+			value="/opt/IDES/log/httpclient-ing/samples.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} | %t | %-5p |  %l | %m%n" />
+		</layout>
+	</appender>
+	
+	
+
+	<!-- Application Loggers -->
+	<logger name="com.pruebas.http_components_client.samples" additivity="false">
+		<level value="trace" />
+	</logger>
+	
+	
+	<logger name="org.springframework.ws.client" additivity="false">
+		<level value="trace" />
+	</logger>
+	
+	<logger name="com.ingdirect.dg.business.command.db" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	
+	<logger name="com.ingdirect.dg.core.config" additivity="false">
+		<level value="error" />
+	</logger>
+	
+	<logger name="com.ingdirect.dg.core.esb.rest" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<logger name="com.ingdirect.dg.core.profile" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<logger name="com.ingdirect.dg.core.commands" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<logger name="times" additivity="false">
+		<level value="info" />
+	</logger>
+	
+	<logger name="com.ingdirect.dg.core.profile.runnable" additivity="false">
+		<level value="error" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<logger name="fisglobal.jdbc.driver" additivity="false">
+		<level value="warn" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<logger name="java.sql" additivity="true">
+		<level value="debug" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<logger name="com.pruebas.httpComponentsClient" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	
+	<!-- Root Logger -->
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="file" />
+	</root>
+
+</log4j:configuration>

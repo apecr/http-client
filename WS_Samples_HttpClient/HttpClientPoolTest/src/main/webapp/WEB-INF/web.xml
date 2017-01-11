@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>HttpClientPoolTestServlet</servlet-name>
+  	<display-name>HttpClientPoolTestServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.pruebas.httpComponentsClient.HttpClientPoolTestServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MonitorServlet</servlet-name>
+  	<display-name>MonitorServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.pruebas.httpComponentsClient.MonitorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HttpClientPoolTestServlet</servlet-name>
+  	<url-pattern>/HttpClientPoolTestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MonitorServlet</servlet-name>
+  	<url-pattern>/MonitorServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
