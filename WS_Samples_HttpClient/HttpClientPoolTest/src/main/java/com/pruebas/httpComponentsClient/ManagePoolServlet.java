@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,7 +32,7 @@ public class ManagePoolServlet extends HttpServlet {
 		String operation = (String)request.getParameter("operation");
 		String param1    = (String)request.getParameter("param1");
 		if (operation.equals("close")){
-			ConnectionManager.cm.close();
+			//ConnectionManager.cm.close();
 		} else 	if (operation.equals("closeExpired")){
 			ConnectionManager.cm.closeExpiredConnections();;
 		} else 	if (operation.equals("closeIdle")){
