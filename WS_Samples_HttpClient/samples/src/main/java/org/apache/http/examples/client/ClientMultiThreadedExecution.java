@@ -30,7 +30,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -38,14 +37,12 @@ import org.apache.http.config.SocketConfig;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.pool.PoolStats;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
 
 /**
  * An example that performs GETs from multiple threads.
@@ -306,12 +303,12 @@ Thread.sleep(2000);
     
     public static void printRoutes(PoolingHttpClientConnectionManager cm){
         Set<HttpRoute> routes =cm.getRoutes();
-        Iterator iter = routes.iterator();
+        Iterator<HttpRoute> iter = routes.iterator();
         HttpRoute route;
         
         logger.debug("-->routes.isEmpty() = "+routes.isEmpty());
         while (iter.hasNext()) {
-            route = (HttpRoute)iter.next();
+            route = iter.next();
             logger.debug("-->route.getTargetHost().getHostName() = "+route.getTargetHost().getHostName());
         }
     }
