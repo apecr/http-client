@@ -314,7 +314,7 @@ Thread.sleep(2000);
     }
     
     public static void printTotalStats(PoolingHttpClientConnectionManager cm){
-      	 logger.debug("////////////////printTotalStats/////INICIO///////////////////////////////////////");
+      	 logger.debug("////////////////printTotalStats/////INICIO/////////////////////////////////////");
         PoolStats poolStats = cm.getTotalStats();
         StringBuffer sf = new StringBuffer("");
         sf.append(" - poolStats.toString() = "+poolStats.toString());
